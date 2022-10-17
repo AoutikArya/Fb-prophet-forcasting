@@ -44,9 +44,12 @@ if df is not None:
     predict=model.predict(future)
     idx2=len(predict)-1
     if st.button('Predict'):
-        st.write(f"Value changed from   **{round(df['y'][idx],2)}**   as on {df['ds'][idx]} to  ***{round(predict['yhat'][idx2],2)}***   as on {predict['ds'][idx2]}")
+        st.write(f"Value changed from **{round(df['y'][idx],2)}** as on {df['ds'][idx]} to ***{round(predict['yhat'][idx2],2)}*** as on {predict['ds'][idx2]}")
         st.pyplot(model.plot(predict,xlabel='Date',ylabel=y,include_legend=True))
         st.pyplot(model.plot_components(predict))
+ 
+"""This method is used to import image as background"""
+
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
         encoded_string = base64.b64encode(image_file.read())
