@@ -47,11 +47,11 @@ if df is not None:
         st.write(f"Value changed from **{round(df['y'][idx],2)}** as on {df['ds'][idx]} to ***{round(predict['yhat'][idx2],2)}*** as on {predict['ds'][idx2]}")# pylint: disable=[C0301]
         st.pyplot(model.plot(predict,xlabel='Date',ylabel=y,include_legend=True))
         st.pyplot(model.plot_components(predict))
- 
-"""This method is used to import image as background"""
+ # pylint: disable=[C0303]
+"""This method is used to import image as background"""# pylint: disable=[W0105]
 
-def add_bg_from_local(image_file):
-    with open(image_file, "rb") as image_file:
+def add_bg_from_local(image_file):# pylint: disable=[C0116]
+    with open(image_file, "rb") as image_file:# pylint: disable=[R1704]
         encoded_string = base64.b64encode(image_file.read())
     st.markdown(
     f'''
