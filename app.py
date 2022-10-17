@@ -44,7 +44,7 @@ if df is not None:
     predict=model.predict(future)
     idx2=len(predict)-1
     if st.button('Predict'):
-        st.write(f"Value changed from **{round(df['y'][idx],2)}** as on {df['ds'][idx]} to ***{round(predict['yhat'][idx2],2)}*** as on {predict['ds'][idx2]}")
+        st.write(f"Value changed from **{round(df['y'][idx],2)}** as on {df['ds'][idx]} to ***{round(predict['yhat'][idx2],2)}*** as on {predict['ds'][idx2]}")# pylint: disable=[C0301]
         st.pyplot(model.plot(predict,xlabel='Date',ylabel=y,include_legend=True))
         st.pyplot(model.plot_components(predict))
  
